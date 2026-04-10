@@ -4,7 +4,7 @@
 
 Abrir en la carpeta donde quieres clonar el repo el bash de git y hacer esto:
 
-git clone https://github.com/964jorge/PAP-Repo
+git clone https://github.com/964jorge/Algoritmia-y-Complejidad-Ash-y-Jorge
 
 Luego para trabajar cierra el bash y abrelo dentro de la carpeta.
 
