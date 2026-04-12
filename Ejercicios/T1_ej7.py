@@ -18,7 +18,7 @@ while numeroInvalido:
 
     try:
 
-        numero = int(input("Elija un maximo: \n"))
+        numero = int(input("Elija un maximo: "))
 
         if numero > 1:
 
@@ -26,25 +26,61 @@ while numeroInvalido:
 
         else:
 
-            print("Numero invalido\n")
+            print("\nNumero invalido\n")
 
 
     except:
 
-        print("Numero invalido\n")
+        print("\nNumero invalido\n")
+
+
+"""
+
+VERSION MENOS EFICIENTE SIN CRIBA DE ERASTOTENES
+
+
+def divisores(numero) -> list[int]:
+
+    divisores = []
+
+    for i in range(2, numero):
+
+        if numero % i == 0:
+
+            divisores.append(i)
+            break
+
+    return divisores
+
 
 
 
 
 def contarPrimos(numero) -> list[int]:
 
-    lista = [1,2,3]
+    lista = []
+
+    #resulta que el 1 no es primo ni compuesto asi que no le contamos
+    for i in range(2, numero+1):
+
+        listaDivisores = divisores(i)
+
+        if len(listaDivisores) == 0:
+
+            lista.append(i)
+            print(i)
+
+
 
     return lista
 
 
+print("Divisores de " + str(numero) + "\n")
 
+listaPrimos = contarPrimos(numero)
 
+print("\n\n En total son " + str(len(listaPrimos)) + "\n")
 
+"""
 
 
