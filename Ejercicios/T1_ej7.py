@@ -21,7 +21,7 @@ while numeroInvalido:
 
         numero = int(input("Elija un maximo: "))
 
-        if numero > 1:
+        if numero > 0:
 
             numeroInvalido = False
 
@@ -33,6 +33,13 @@ while numeroInvalido:
     except:
 
         print("\nNumero invalido\n")
+
+
+
+if numero <= 2:
+
+    print("Hasta el " + str(numero)+ " no hay ni primos ni perfectos\n")
+    exit(0)
 
 
 
