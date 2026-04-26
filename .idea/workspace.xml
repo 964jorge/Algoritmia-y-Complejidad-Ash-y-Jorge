@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9cd16b6d-aa57-4ce7-bb90-35c8d34dd732" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ejercicios/T2_ej2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ejercicios/T2_ej2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ejercicios/T3_ej6.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ejercicios/T3_ej6.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +80,7 @@
       <workItem from="1776792157963" duration="7832000" />
       <workItem from="1777042818075" duration="6855000" />
       <workItem from="1777063738137" duration="208000" />
-      <workItem from="1777193162853" duration="6215000" />
+      <workItem from="1777193162853" duration="6616000" />
     </task>
     <servers />
   </component>
@@ -89,7 +88,7 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Algoritmia_y_Complejidad_Ash_y_Jorge$T2_ej2.coverage" NAME="T2_ej2 Coverage Results" MODIFIED="1777199288232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ejercicios" />
+    <SUITE FILE_PATH="coverage/Algoritmia_y_Complejidad_Ash_y_Jorge$T2_ej2.coverage" NAME="T2_ej2 Coverage Results" MODIFIED="1777199686791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ejercicios" />
     <SUITE FILE_PATH="coverage/Algoritmia_y_Complejidad_Ash_y_Jorge$T1_ej7.coverage" NAME="T1_ej7 Coverage Results" MODIFIED="1777063897456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ejercicios" />
   </component>
 </project>
