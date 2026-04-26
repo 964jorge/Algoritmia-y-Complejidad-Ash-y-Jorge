@@ -16,3 +16,67 @@ máximo beneficio que podrá sacar Alí Babá de la cueva de las maravillas.
 
 
 """
+
+objetos = [(2, 40), (5, 20), (4, 40), (3, 20), (2, 40), (5, 20), (4, 40), (3, 20) ]
+
+capacidadAlforja = 8
+
+resultadosParciales = []
+
+k = 0
+while k < capacidadAlforja + 1 :
+
+    filaMatriz = [0]*(capacidadAlforja + 1)
+    resultadosParciales.append(filaMatriz)
+    k += 1
+
+
+
+
+def maximizador(trasto = 0, capacidadRestante = capacidadAlforja) -> list:
+
+
+    while trasto < len(objetos):
+
+        i = capacidadRestante
+
+        while i >= 0:
+
+            j = capacidadRestante
+
+            while j >= 0:
+
+                if objetos[trasto][0] <= i:
+
+                    resultadosParciales[i][j] = max(
+                        resultadosParciales[i - objetos[trasto][0]][j] + objetos[trasto][1],
+                        resultadosParciales[i][j])
+
+                if objetos[trasto][0] <= j:
+
+                    resultadosParciales[i][j] = max(
+                        resultadosParciales[i][j - objetos[trasto][0]] + objetos[trasto][1],
+                        resultadosParciales[i][j])
+
+                j -= 1
+
+            i -= 1
+
+        trasto += 1
+
+    return resultadosParciales
+
+
+
+dp = maximizador()
+
+i = 0
+while i <= capacidadAlforja:
+    print(f"{i}: {dp[i]}")
+    i += 1
+
+print ("\n\nMaximo dinero: " + str(dp[capacidadAlforja][capacidadAlforja]))
+
+
+
+

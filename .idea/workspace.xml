@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9cd16b6d-aa57-4ce7-bb90-35c8d34dd732" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ejercicios/T3_ej6.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ejercicios/T3_ej6.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ejercicios/T4_ej4.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ejercicios/T4_ej4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ejercicios/T5_ej4.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ejercicios/T5_ej4.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +42,7 @@
     "Python.T1_ej7.executor": "Run",
     "Python.T2_ej2.executor": "Run",
     "Python.T3_ej6.executor": "Run",
+    "Python.T4_ej4.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
@@ -84,7 +83,7 @@
       <workItem from="1776792157963" duration="7832000" />
       <workItem from="1777042818075" duration="6855000" />
       <workItem from="1777063738137" duration="208000" />
-      <workItem from="1777193162853" duration="18686000" />
+      <workItem from="1777193162853" duration="30604000" />
     </task>
     <servers />
   </component>
@@ -94,6 +93,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Algoritmia_y_Complejidad_Ash_y_Jorge$T2_ej2.coverage" NAME="T2_ej2 Coverage Results" MODIFIED="1777199686791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ejercicios" />
     <SUITE FILE_PATH="coverage/Algoritmia_y_Complejidad_Ash_y_Jorge$T1_ej7.coverage" NAME="T1_ej7 Coverage Results" MODIFIED="1777063897456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ejercicios" />
+    <SUITE FILE_PATH="coverage/Algoritmia_y_Complejidad_Ash_y_Jorge$T4_ej4.coverage" NAME="T4_ej4 Coverage Results" MODIFIED="1777232405456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ejercicios" />
     <SUITE FILE_PATH="coverage/Algoritmia_y_Complejidad_Ash_y_Jorge$T3_ej6.coverage" NAME="T3_ej6 Coverage Results" MODIFIED="1777217298343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ejercicios" />
   </component>
 </project>
