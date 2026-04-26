@@ -4,7 +4,7 @@
 Se dispone de un tablero M de tamaño FxC (donde F es la cantidad de filas y C la
 cantidad de columnas) y se pone en una casilla inicial (x,y) un caballo de ajedrez.
 El objetivo es encontrar, si es posible, la forma en la que el caballo debe moverse
-para recorrer todo el tablero, de manera que cada casilla se utilice una única vez
+para recorrer tod el tablero, de manera que cada casilla se utilice una única vez
 en el recorrido. El tablero 8x8 siempre tiene solución independientemente de
 dónde comience el caballo. El caballo puede terminar en cualquier posición del
 tablero.
