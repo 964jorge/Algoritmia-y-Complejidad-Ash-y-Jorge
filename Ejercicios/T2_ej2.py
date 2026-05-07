@@ -28,30 +28,27 @@ ficheros = [(5, 2), (3, 5), (1, 4), (7, 2), (1, 1), (2, 4), (4, 2), (4, 4)]
 #ficheros = [(2, 9), (3, 12), (1, 5), (4, 10), (5, 25), (6, 18), (2, 4), (7, 21), (1, 2), (8, 16), (3, 6), (4, 4), (5, 10), (9, 18), (2, 1)]
 
 #guardará la relación longitud/uso, el tamaño en una tupla y la propia tupla para luego recuperarla
-coeficientesFicheros =[]
-
-#el resultado del algoritmo
-ficherosOrdenados = []
-
-i = 0
-while i < len(ficheros):
-
+def obtenerCoefFicheros(lista)->list:
+    i = 0
+    coeficientesFicheros=[]
+    while i < len(lista):
     #para cada fichero calculamos el coeficiente y lo guardamos en la lista de los coef
-    coeficientesFicheros.append((ficheros[i][0]/ficheros[i][1], ficheros[i][0], ficheros[i]))
-    i += 1
+        coeficientesFicheros.append((lista[i][0]/lista[i][1], lista[i][0], lista[i]))
+        i += 1
+    return coeficientesFicheros
 
 
 
 #para hacer las cosas eficientes, vamos a ordenar por el cociente y ante igualdad por el que tenga menor longitud
 def ordenarMergeSort(cosaSiendoOrdenada) -> list:
+    n = len(cosaSiendoOrdenada)
 
-    if len(cosaSiendoOrdenada) <= 1:
+    if n <= 1: #Si solo tiene un elemento
 
         return cosaSiendoOrdenada
 
     else:
-
-        medio = len(cosaSiendoOrdenada)//2
+        medio = n//2
 
         principio = ordenarMergeSort(cosaSiendoOrdenada[:medio])
         final = ordenarMergeSort(cosaSiendoOrdenada[medio:])
@@ -99,17 +96,14 @@ def ordenarMergeSort(cosaSiendoOrdenada) -> list:
 
         return ordenado
 
+def voraz_ficherosOrdenados(listaFicheros)->list:
 
-
-i = 0
-ficherosOrdenados = ordenarMergeSort(coeficientesFicheros)
-resultado = []
-while i < len(ficherosOrdenados):
-
-    #vamos a quitar la información extra para imprimirlo bonito, recorremos y dejamos solo la tupla
-    resultado.append(ficherosOrdenados[i][2])
-    i += 1
-
-print(resultado)
-#este de abajo es por si queremos ver que se ha segido el orden del coeficiente + minima longitud
-print("\n\n" + str(ficherosOrdenados))
+    coeficientesFicheros= obtenerCoefFicheros(listaFicheros)
+    ficherosOrdenados = ordenarMergeSort(coeficientesFicheros)
+    i = 0
+    resultado = []
+    while i < len(ficherosOrdenados):
+    #vamos a quitar la información extra y dejamos solo la tupla
+        resultado.append(ficherosOrdenados[i][2])
+        i += 1
+    return resultado

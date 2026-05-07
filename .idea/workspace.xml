@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9cd16b6d-aa57-4ce7-bb90-35c8d34dd732" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Ejercicios/test_primosPerfectos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Algoritmia-y-Complejidad-Ash-y-Jorge.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Algoritmia-y-Complejidad-Ash-y-Jorge.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ejercicios/test_ficheros.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ejercicios/T1_ej7.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ejercicios/T1_ej7.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ejercicios/T2_ej2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ejercicios/T2_ej2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +52,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python tests.Python tests for Ejercicios.test_ficheros.test_casoVacio.executor": "Run",
+    "Python tests.Python tests for Ejercicios.test_ficheros.test_ficherosIguales.executor": "Run",
+    "Python tests.Python tests for Ejercicios.test_ficheros.test_ficherosIguales_en_diferentesPosiciones.executor": "Run",
+    "Python tests.Python tests for Ejercicios.test_ficheros.test_listaLarga_Ficheros.executor": "Run",
+    "Python tests.Python tests for Ejercicios.test_ficheros.test_obtenerCoefFicheros.executor": "Run",
+    "Python tests.Python tests for Ejercicios.test_ficheros.test_un_solo_fichero.executor": "Run",
+    "Python tests.Python tests in test_ficheros.py.executor": "Run",
     "Python tests.Python tests in test_primosPerfectos.py.executor": "Run",
     "Python.T1_ej7.executor": "Run",
     "Python.T2_ej2.executor": "Run",
@@ -83,6 +87,92 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\sashl\IdeaProjects\Algoritmia-y-Complejidad-Ash-y-Jorge\Ejercicios" />
     </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Python tests for Ejercicios.test_ficheros.test_listaLarga_Ficheros">
+    <configuration name="Python tests for Ejercicios.test_ficheros.test_casoVacio" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Algoritmia-y-Complejidad-Ash-y-Jorge" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;Ejercicios.test_ficheros.test_casoVacio&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for Ejercicios.test_ficheros.test_ficherosIguales" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Algoritmia-y-Complejidad-Ash-y-Jorge" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;Ejercicios.test_ficheros.test_ficherosIguales&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for Ejercicios.test_ficheros.test_ficherosIguales_en_diferentesPosiciones" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Algoritmia-y-Complejidad-Ash-y-Jorge" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;Ejercicios.test_ficheros.test_ficherosIguales_en_diferentesPosiciones&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for Ejercicios.test_ficheros.test_listaLarga_Ficheros" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Algoritmia-y-Complejidad-Ash-y-Jorge" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;Ejercicios.test_ficheros.test_listaLarga_Ficheros&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for Ejercicios.test_ficheros.test_un_solo_fichero" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Algoritmia-y-Complejidad-Ash-y-Jorge" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;Ejercicios.test_ficheros.test_un_solo_fichero&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for Ejercicios.test_ficheros.test_listaLarga_Ficheros" />
+        <item itemvalue="Python tests.Python tests for Ejercicios.test_ficheros.test_ficherosIguales_en_diferentesPosiciones" />
+        <item itemvalue="Python tests.Python tests for Ejercicios.test_ficheros.test_ficherosIguales" />
+        <item itemvalue="Python tests.Python tests for Ejercicios.test_ficheros.test_un_solo_fichero" />
+        <item itemvalue="Python tests.Python tests for Ejercicios.test_ficheros.test_casoVacio" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
