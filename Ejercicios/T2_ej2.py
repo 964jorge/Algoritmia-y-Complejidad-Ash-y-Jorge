@@ -29,6 +29,8 @@ ficheros = [(5, 2), (3, 5), (1, 4), (7, 2), (1, 1), (2, 4), (4, 2), (4, 4)]
 
 #guardará la relación longitud/uso, el tamaño en una tupla y la propia tupla para luego recuperarla
 def obtenerCoefFicheros(lista)->list:
+    """Orden: O(n) ya que recibimos una lista de n ficheros a cada uno de los cuales el bucle calcula
+    su coeficiente(división 0(1)) y realiza un apped (O(1))"""
     i = 0
     coeficientesFicheros=[]
     while i < len(lista):
@@ -41,6 +43,9 @@ def obtenerCoefFicheros(lista)->list:
 
 #para hacer las cosas eficientes, vamos a ordenar por el cociente y ante igualdad por el que tenga menor longitud
 def ordenarMergeSort(cosaSiendoOrdenada) -> list:
+    """Utilizamos MergeSort visto en clase. La recurrencia del algoritmo es: T(n) = 2T(n/2) + O(n)
+    y por el Teorema Maestro, el coste total es 0(n log n). La creación de listas auxiliares supone un costo de O(n)."""
+
     n = len(cosaSiendoOrdenada)
 
     if n <= 1: #Si solo tiene un elemento
@@ -97,7 +102,7 @@ def ordenarMergeSort(cosaSiendoOrdenada) -> list:
         return ordenado
 
 def voraz_ficherosOrdenados(listaFicheros)->list:
-
+    """El coste predominante es la ordenación asi que la complejidad es: O(n log n)"""
     coeficientesFicheros= obtenerCoefFicheros(listaFicheros)
     ficherosOrdenados = ordenarMergeSort(coeficientesFicheros)
     i = 0
