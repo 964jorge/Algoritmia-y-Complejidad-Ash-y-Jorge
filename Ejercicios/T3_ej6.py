@@ -30,84 +30,106 @@ metros (ε es una constante dada).
 
 """
 import random
+import sys
 
 
-escenario = []
+def crearEscenario(rio: int, tamanno: int) -> list:
 
-rio = int(random.random()*1000)
+    if rio >= tamanno:
 
-#Para esto nos ha ayudado ChatGPT porque en el que creamos nosotros se meseteaba a lo bestia, al final ha tocado meter suavizado y memoria
-#hemos comprobado que no cree microvalles para no petar la idea del ejercicio. Ademas para respetar las mesetas las hemos añadido aleatoriamente
-valor = 0
-en_meseta = False
-meseta_restante = 0
+        sys.exit(-1)
 
-for i in range(1000):
+    escenario = []
 
-    # 1. base de la U
-    base = abs(i - rio)
+    #Para esto nos ha ayudado ChatGPT porque en el que creamos nosotros se meseteaba a lo bestia, al final ha tocado meter suavizado y memoria
+    #hemos comprobado que no cree microvalles para no petar la idea del ejercicio. Ademas para respetar las mesetas las hemos añadido aleatoriamente
+    valor = 0
+    en_meseta = False
+    meseta_restante = 0
 
-    # 2. activar meseta de vez en cuando (evento global)
-    if not en_meseta and random.random() < 0.02:
-        en_meseta = True
-        meseta_restante = random.randint(5, 20)
-        valor_meseta = valor  # congelamos nivel actual
+    for i in range(tamanno):
 
-    # 3. si estamos en meseta
-    if en_meseta:
-        valor = valor_meseta
-        meseta_restante -= 1
+        # 1. base de la U
+        base = abs(i - rio)
 
-        if meseta_restante == 0:
-            en_meseta = False
+        # 2. activar meseta de vez en cuando (evento global)
+        if not en_meseta and random.random() < 0.02:
+            en_meseta = True
+            meseta_restante = random.randint(5, 20)
+            valor_meseta = valor  # congelamos nivel actual
 
-    else:
-        # 4. dinámica con memoria (sin ruido)
-        valor = (valor + base) // 2
+        # 3. si estamos en meseta
+        if en_meseta:
+            valor = valor_meseta
+            meseta_restante -= 1
 
-    escenario.append(valor)
+            if meseta_restante == 0:
+                en_meseta = False
+
+        else:
+            # 4. dinámica con memoria (sin ruido)
+            valor = (valor + base) // 2
+
+
+        escenario.append(valor)
+
+    escenario[rio] = 0
+
+    return escenario
 
 
 
 
-
-def medirConLaser(punto: int) -> int:
+def medirConLaser(punto: int, escenario: list) -> int:
 
     return escenario[punto]
 
 
 
-error = 10
+def encontrarValle(escenario: list, error: int) -> (list, int, int):
 
-extremoIzquierda = 0
-extremoDerecha = 999
-
-while abs(extremoDerecha - extremoIzquierda) > error:
-
-    tercio1 = extremoIzquierda + (extremoDerecha - extremoIzquierda) // 3
-    tercio2 = extremoDerecha - (extremoDerecha - extremoIzquierda) // 3
-
-    if medirConLaser(tercio1) > medirConLaser(tercio2):
-
-        extremoIzquierda = tercio1
-
-    elif medirConLaser(tercio1) < medirConLaser(tercio2):
-
-        extremoDerecha = tercio2
-
-    else:
-
-        extremoIzquierda = tercio1
-        extremoDerecha = tercio2
+    extremoDerecha = len(escenario) -1
+    extremoIzquierda = 0
 
 
+    while abs(extremoDerecha - extremoIzquierda) > error:
+
+        tercio1 = extremoIzquierda + (extremoDerecha - extremoIzquierda) // 3
+        tercio2 = extremoDerecha - (extremoDerecha - extremoIzquierda) // 3
+
+        if medirConLaser(tercio1, escenario) > medirConLaser(tercio2, escenario):
+
+            extremoIzquierda = tercio1
+
+        elif medirConLaser(tercio1, escenario) < medirConLaser(tercio2, escenario):
+
+            extremoDerecha = tercio2
+
+        else:
+
+            extremoIzquierda = tercio1
+            extremoDerecha = tercio2
+
+    return escenario[extremoIzquierda:extremoDerecha]
 
 
 
+escenario = crearEscenario(500, 1000)
+devolucion = encontrarValle(escenario, 10)
+resultado = devolucion
+print(resultado)
 
 # Esto esta para probar, es puro chatgpt. queda de hacerlo asi un poco mas personal pero me da un palo que no te imaginas
 #estoy hasta la polla de Indiana Croft
 
+extremoIzquierda = 0
+extremoDerecha = 999
+rio = 500
+error = 10
+
+for i in range (20):
+
+    print (escenario[i])
 
 estimado = (extremoIzquierda + extremoDerecha) // 2
 real = rio
@@ -149,7 +171,6 @@ for i in range(0, 1000, 10):  # salto horizontal para que sea legible
         marcador += "  ─ meseta"
 
     print(f"{i:4} | {barras}{marcador}")
-
 
 
 
