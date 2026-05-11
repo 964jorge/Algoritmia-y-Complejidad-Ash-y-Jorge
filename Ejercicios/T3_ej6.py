@@ -29,36 +29,37 @@ metros (ε es una constante dada).
 
 
 """
+
+
 import random
 import sys
 
 
 def crearEscenario(rio: int, tamanno: int) -> list:
 
+    #Creado para poder probar nuestra función principal
+
     if rio >= tamanno:
 
         sys.exit(-1)
 
     escenario = []
-
-    #Para esto nos ha ayudado ChatGPT porque en el que creamos nosotros se meseteaba a lo bestia, al final ha tocado meter suavizado y memoria
-    #hemos comprobado que no cree microvalles para no petar la idea del ejercicio. Ademas para respetar las mesetas las hemos añadido aleatoriamente
     valor = 0
     en_meseta = False
     meseta_restante = 0
 
     for i in range(tamanno):
 
-        # 1. base de la U
+        # Para garantizar el decrecimiento y crecimiento
         base = abs(i - rio)
 
-        # 2. activar meseta de vez en cuando (evento global)
+        # Añadimos mesetas usando probabilidad
         if not en_meseta and random.random() < 0.02:
             en_meseta = True
             meseta_restante = random.randint(5, 20)
             valor_meseta = valor  # congelamos nivel actual
 
-        # 3. si estamos en meseta
+        # si estamos en meseta
         if en_meseta:
             valor = valor_meseta
             meseta_restante -= 1
@@ -67,9 +68,8 @@ def crearEscenario(rio: int, tamanno: int) -> list:
                 en_meseta = False
 
         else:
-            # 4. dinámica con memoria (sin ruido)
-            valor = (valor + base) // 2
 
+            valor = (valor + base) // 2
 
         escenario.append(valor)
 
@@ -78,15 +78,16 @@ def crearEscenario(rio: int, tamanno: int) -> list:
     return escenario
 
 
-
-
 def medirConLaser(punto: int, escenario: list) -> int:
-
+    """Supone un coste de O(1), solo de acceso"""
     return escenario[punto]
 
 
-
-def encontrarValle(escenario: list, error: int) -> (list, int, int):
+def encontrarValle(escenario: list, error: int) -> tuple:
+    """Usamos una búsqueda ternaria para reducir cada vez más el intervalo donde buscamos el mínimo
+    (Consideramos el río como nuestro 0). Obtenemos una complejidad de O(log n). En cada paso tenemos
+    operaciones constantes como las operaciones con el láser y la búsqueda en el tramo reducido para
+    encontrar el mínimo que continuan manteniendo el O(log n) """
 
     extremoDerecha = len(escenario) -1
     extremoIzquierda = 0
@@ -97,11 +98,14 @@ def encontrarValle(escenario: list, error: int) -> (list, int, int):
         tercio1 = extremoIzquierda + (extremoDerecha - extremoIzquierda) // 3
         tercio2 = extremoDerecha - (extremoDerecha - extremoIzquierda) // 3
 
-        if medirConLaser(tercio1, escenario) > medirConLaser(tercio2, escenario):
+        d1 = medirConLaser(tercio1, escenario)
+        d2 = medirConLaser(tercio2, escenario)
+
+        if d1 > d2:
 
             extremoIzquierda = tercio1
 
-        elif medirConLaser(tercio1, escenario) < medirConLaser(tercio2, escenario):
+        elif d1 < d2:
 
             extremoDerecha = tercio2
 
@@ -110,72 +114,18 @@ def encontrarValle(escenario: list, error: int) -> (list, int, int):
             extremoIzquierda = tercio1
             extremoDerecha = tercio2
 
-    return escenario[extremoIzquierda:extremoDerecha]
+        min = extremoIzquierda
+        for i in range(extremoIzquierda,extremoDerecha +1):
+            if escenario[i]<escenario[min]:
+                min = i
 
+    return min, escenario[min]
 
-
-escenario = crearEscenario(500, 1000)
-devolucion = encontrarValle(escenario, 10)
+#Pequeña prueba con print:
+error=3
+escenario = crearEscenario(9, 100)
+devolucion = encontrarValle(escenario, error)
 resultado = devolucion
-print(resultado)
-
-# Esto esta para probar, es puro chatgpt. queda de hacerlo asi un poco mas personal pero me da un palo que no te imaginas
-#estoy hasta la polla de Indiana Croft
-
-extremoIzquierda = 0
-extremoDerecha = 999
-rio = 500
-error = 10
-
-for i in range (20):
-
-    print (escenario[i])
-
-estimado = (extremoIzquierda + extremoDerecha) // 2
-real = rio
-
-print("\n===== RESULTADOS =====")
-print(f"Río real:        {real}")
-print(f"Estimado:        {estimado}")
-print(f"Error absoluto:  {abs(real - estimado)}")
-print(f"Correcto (±{error}): {abs(real - estimado) <= error}")
-
-print("\nZona final:")
-print("Izquierda:", extremoIzquierda)
-print("Derecha:   ", extremoDerecha)
-
-print("\nValores alrededor del estimado:")
-for i in range(max(0, estimado - 5), min(1000, estimado + 5)):
-    print(i, escenario[i])
-
-
-print("\n===== ESCENARIO (VISTA SIMPLE) =====\n")
-
-max_val = max(escenario)
-
-escala = max(1, max_val // 50)  # ajusta resolución vertical
-
-for i in range(0, 1000, 10):  # salto horizontal para que sea legible
-
-    valor = escenario[i]
-
-    barras = "█" * (valor // escala)
-
-    marcador = ""
-
-    if i == rio:
-        marcador += "  ← RÍO (mínimo)"
-
-    # detectar meseta (comparación simple con anterior)
-    if i > 0 and escenario[i] == escenario[i-1]:
-        marcador += "  ─ meseta"
-
-    print(f"{i:4} | {barras}{marcador}")
-
-
-
-
-
-
+print(f"{resultado} con margen de error {error}")
 
 
