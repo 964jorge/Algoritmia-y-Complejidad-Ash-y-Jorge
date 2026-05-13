@@ -24,8 +24,7 @@ es O(8^N), es decir, O(8^(filas*columnas)).
 La heurística de Warnsdorff ordena los movimientos posibles desde una casilla 
 según el número de opciones futuras. Como 8 es el número de movimientos posibles,
 calcular el coeficiente de cada movimiento y ordenarlos tiene coste O(a log a). 
-En el caso del caballo, a está acotado por 8, por lo que este coste se considera 
-constante, O(1), y no modifica la complejidad global del algoritmo.
+En el caso del caballo, a está acotado por 8, por lo que tenemos O(1), y no modifica la complejidad calculada antes.
 
 """
 
@@ -109,7 +108,7 @@ def ordenar_warnsdorff(movimientos, tablero, filas, columnas):
 
         lista_coef.append((cantidad_mov_futuros, movimiento))
 
-    # Ordena por el primer valor de la tupla automáticamente
+    # Ordenamos por el primer valor de la tupla automáticamente
     lista_coef.sort()
 
     movimientos_ordenados = []
@@ -119,23 +118,19 @@ def ordenar_warnsdorff(movimientos, tablero, filas, columnas):
 
     return movimientos_ordenados
 
-def backtracking_caballo(posicion, marcador, tablero, filas, columnas):
-    """
-    Función recursiva de backtracking
-    """
+def backtracking_caballo(pos, paso, tablero, filas, columnas):
 
-    fila = posicion[0]
-    columna = posicion[1]
+    fila,columna = pos
 
     # Marcamos la casilla actual con el número de paso
-    tablero[fila][columna] = marcador
+    tablero[fila][columna] = paso
 
     # Si el marcador es la última casilla, hemos terminado.
-    if marcador == filas * columnas - 1:
+    if paso == filas * columnas - 1:
         return True
 
     # Generamos los hijos válidos. Calculamos las casillas a las que el caballo puede ir desde la pos actual
-    hijos = movimientos_posibles(posicion, tablero, filas, columnas)
+    hijos = movimientos_posibles(pos, tablero, filas, columnas)
 
     # Ordenamos los hijos con la heurística de Warnsdorff
     hijos = ordenar_warnsdorff(hijos, tablero, filas, columnas)
@@ -143,7 +138,7 @@ def backtracking_caballo(posicion, marcador, tablero, filas, columnas):
     # Para cada movimiento posible del caballo
     for hijo in hijos:
         #Recursión
-        if backtracking_caballo(hijo, marcador + 1, tablero, filas, columnas):
+        if backtracking_caballo(hijo, paso + 1, tablero, filas, columnas):
             return True
 
     # Si no consigue compleat el tablero, hacemos backtracking:
